@@ -3,7 +3,7 @@ import time
 import datetime
 from db import create_connection, create_table, insert_weather_summary
 
-API_KEY = 'your_api_key'  # Replace with your OpenWeatherMap API key
+API_KEY = '3ea793a78717a7c3f0cea5a418c18697 '  # Replace with your OpenWeatherMap API key
 CITIES = ['Delhi', 'Mumbai', 'Chennai', 'Bangalore', 'Kolkata', 'Hyderabad']
 BASE_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
