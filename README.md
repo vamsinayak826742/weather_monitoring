@@ -119,3 +119,81 @@ Sign up at [OpenWeatherMap](https://openweathermap.org/) to get your free API ke
 2. **Verify temperature conversions** and check if the logs display accurate values.
 3. **Check daily rollups** after 24 hours (or simulate shorter intervals for testing).
 4. **Configure alert thresholds** and verify that alerts are triggered appropriately.
+
+
+## Output
+
+# Real-Time Weather Monitoring Dashboard
+
+#### Dynamic Weather Data Table
+The Dynamic Weather Data Table is essential for displaying real-time weather data, updated every minute to reflect the latest conditions. The table includes the following key columns:
+
+- **City**: Displays the name of the city for which the weather data is being reported.
+- **Main Condition**: Indicates the primary weather condition (e.g., Clear, Rain, Clouds) affecting the city.
+- **Temperature**: Shows the current temperature in the selected unit (Celsius, Fahrenheit, or Kelvin) based on user preference.
+- **Feels Like**: Represents the perceived temperature, which takes into account factors like humidity and wind speed, providing a more accurate reflection of how the weather feels to individuals.
+- **Time (Unix Timestamp)**: Displays the last updated time of the weather data in Unix timestamp format, giving context on when the information was last fetched.
+
+#### Aggregate Data Table
+The Aggregate Data Table provides key statistics about the weather data collected for a specific city, allowing users to analyze trends and patterns over time. It includes the following data representation:
+
+- **Average Temperature**: Displays the average temperature over a specified period, giving insight into typical weather conditions.
+- **Maximum Temperature**: Indicates the highest temperature recorded, which helps identify extreme weather events.
+- **Minimum Temperature**: Shows the lowest temperature, providing context for colder weather conditions.
+- **Dominant Condition**: Lists the most frequently occurring weather condition, summarizing the overall weather pattern for the city.
+
+![Screenshot (803)](https://github.com/user-attachments/assets/69a95b78-d2fb-4c7d-b17e-6266d527e159)
+
+
+## 1. Bar Chart (Current Temperature by City)
+
+**Purpose:** This chart displays the current temperatures of various cities in a visual format, making it easy to compare temperatures across different locations.
+**Data Representation:**
+**X-axis**: Represents different cities (e.g., Delhi, Mumbai, Chennai, Bangalore, Kolkata, Hyderabad).
+**Y-axis**: Represents the temperature in degrees Celsius.
+**Bars**: Each bar’s height corresponds to the current temperature for each city. The color of the bars varies based on temperature thresholds:
+**Red**: Indicates high temperatures (above 35°C).
+**Yellow**: Represents moderate temperatures (between 25°C and 35°C).
+**Blue**: Indicates cooler temperatures (below 25°C).
+**Insights**: This visualization helps users quickly identify which city is experiencing the hottest or coldest weather at a glance. It can be particularly useful for making decisions based on current weather conditions.
+
+![Screenshot (804)](https://github.com/user-attachments/assets/64048365-0269-4de2-91f7-d092c00385ef)
+
+## 2.Line Chart (Temperature Trends)
+
+**Purpose:** The line chart visualizes the temperature trends over a specified time, showcasing how the temperatures have changed.
+**Data Representation:**
+**X-axis:** Represents time intervals (e.g., hours or days).
+**Y-axis:** Represents temperature in degrees Celsius.
+**Line:** A continuous line connects data points representing the temperatures at different times, allowing users to see trends (increasing, decreasing, or stable temperatures).
+**Insights:** Users can identify patterns, such as daily temperature fluctuations, sudden temperature spikes, or drops, which can inform them about the overall weather trend in the selected cities.
+
+![Screenshot (805)](https://github.com/user-attachments/assets/835b2ddd-c93b-40ba-b770-6bb072050e72)
+
+## 3. Pie Chart (Weather Conditions Distribution)
+
+**Purpose:** This chart displays the distribution of different weather conditions (e.g., clear, rain, clouds, thunderstorms) across the monitored cities.
+**Data Representation:**
+Each segment of the pie represents a different weather condition.
+The size of each segment is proportional to the number of cities experiencing that particular weather condition.
+**Color Coding:** Each weather condition is represented by a distinct color, making it easy to differentiate between them.
+**Insights:** This visualization gives a quick overview of the prevalent weather conditions across the cities. For instance, a larger segment for “Rain” may indicate a rainy season or severe weather affecting multiple locations.
+
+
+![Screenshot 2024-10-24 125756](https://github.com/user-attachments/assets/3b80977d-d9a4-46c6-93f6-dca0a5f96c45)
+
+
+## Alerts Section
+
+**Purpose:** The alerts section provides real-time notifications based on specific weather criteria, such as temperature thresholds.
+**Data Representation:**
+  * Alerts are displayed prominently when conditions exceed defined thresholds (e.g., temperature above 35°C).
+  * Alerts are often color-coded for visibility, such as red for urgent conditions.
+**Insights**: This feature is crucial for timely warnings about extreme weather that could impact safety, allowing users to take necessary precautions.
+
+## Conclusion
+
+  Each of these visualizations and data representations plays a vital role in delivering meaningful insights about the weather. Together, they create an interactive and informative dashboard that enables users to understand current conditions, track trends, and respond effectively to changing weather scenarios. The combination of graphical and tabular formats caters to different preferences for data consumption, enhancing user experience and engagement with the weather monitoring system.
+
+
+
