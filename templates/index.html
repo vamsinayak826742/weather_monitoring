@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <title>Real-Time Weather Dashboard</title>
+</head>
+<body>
+
+    <h1>Real-Time Weather Monitoring Dashboard</h1>
+    
+    <div class="temperature-selector">
+        <label for="unit">Select Temperature Unit: </label>
+        <select id="unit" onchange="fetchWeatherData()">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+    </div>
+
+    <div class="weather-table">
+        <table id="weather-table"></table>
+    </div>
+
+    <div class="aggregates">
+        <h3>Select a City for Aggregates:</h3>
+        <select onchange="fetchAggregates(this.value)">
+            <option value="Delhi">Delhi</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Hyderabad">Hyderabad</option>
+        </select>
+        <div id="aggregates"></div>
+        <table id="aggregate-table" style="display:none;"></table> <!-- Table for aggregates -->
+    </div>
+
+    <h1>Weather Visualization Dashboard</h1>
+    <!-- Visualizations -->
+<div class="chart-container">
+    <h3>Current Temperature in Cities</h3>
+    <p>This chart displays the current temperature across major Indian metros, providing a quick overview of weather conditions in each city.</p>
+    <canvas id="countryBarChart" width="400" height="200"></canvas>
+
+</div>
+<div class="chart-container">
+    <h3>Temperature Trends Over Time</h3>
+    <p>This line chart illustrates the temperature variations in selected cities over a specific period, helping to visualize weather patterns.</p>
+    <canvas id="tempLineChart"></canvas>
+</div>
+<div class="chart-container">
+    <h3>Distribution of Weather Conditions</h3>
+    <p>This pie chart represents the proportion of different weather conditions (e.g., Clear, Rain, Cloudy) currently observed across all cities, highlighting the dominant weather patterns.</p>
+    <canvas id="conditionPieChart"></canvas>
+</div>
+
+
+    <div id="alert-container"></div>
+
+</body>
+</html>

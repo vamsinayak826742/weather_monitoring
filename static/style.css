@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light cyan background */
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* Bootstrap primary color */
+}
+
+.temperature-selector {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.weather-table, .aggregates {
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* White background for sections */
+}
+
+.alert {
+    color: red;
+    font-weight: bold;
+}
+
+.chart-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center; /* Center the charts */
+}
+
+.chart {
+    width: 100%; /* Full width */
+    height: 400px; /* Fixed height */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+h3 {
+    color: #28a745; /* Bootstrap success color */
+    text-align: center;
+}
+
+/* Flex container for charts */
+.visualizations {
+    display: flex;
+    flex-direction: column; /* Aligns charts vertically */
+    align-items: center; /* Centers charts */
+}
+
+/* Ensures charts take full height and are responsive */
+#tempLineChart,
+#conditionPieChart,
+#tempBarChart {
+    width: 100%; /* Make the charts responsive */
+    height: 400px; /* Fixed height for uniformity */
+}
