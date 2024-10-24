@@ -2,7 +2,7 @@
 # Real-Time Weather Monitoring System with Rollups and Aggregates
 
 ## Objective
-This project is a **Real-Time Data Processing System** designed to monitor weather conditions and provide summarized insights using **rollups** and **aggregates**. The system retrieves weather data from the **OpenWeatherMap API** and supports configurable alert thresholds and daily weather summaries.
+This project is a real-time weather monitoring dashboard built using Python, Flask, HTML/CSS, and JavaScript. It fetches live weather data for six major Indian cities (Delhi, Mumbai, Chennai, Bangalore, Kolkata, Hyderabad) from the OpenWeatherMap API and displays it on a dynamic web page, which updates every minute. The dashboard includes interactive visualizations such as bar charts, line charts, and pie charts to visualize current temperatures and weather conditions. It also provides daily weather summaries, user-configurable alerting thresholds, and options to convert temperatures between Celsius, Fahrenheit, and Kelvin
 
 ## Features
 - **Real-time weather data retrieval** from the OpenWeatherMap API for major Indian cities.
@@ -14,38 +14,31 @@ This project is a **Real-Time Data Processing System** designed to monitor weath
 - **Data storage** to persist daily weather summaries.
 - **Visualizations** for daily summaries, historical trends, and alerting.
 
-## Table of Contents
-1. [Project Structure](#project-structure)
-2. [Prerequisites](#prerequisites)
-3. [Installation](#installation)
-4. [Running the Project](#running-the-project)
-5. [Configuration](#configuration)
-6. [Usage](#usage)
-7. [API Key](#api-key)
-8. [Testing](#testing)
-
 
 ## Project Structure
 
 ```
 weather_monitoring/
+├── static
+│   ├── css
+│   │   └── style.css              # Contains all the styles for the web dashboard
+│   ├── js
+│   │   └── script.js              # Handles dynamic chart rendering and data fetching
 │
-├── venv/                   # Virtual environment
-├── data/                   # Directory for storing data (e.g., SQLite DB)
-├── main.py                 # Main entry point of the application
-├── utils.py                # Utility functions for weather data processing
-├── weather_alerts.py       # Module to manage alerts based on user-defined thresholds
-├── visualization.py        # Visualization functions using Dash
-├── requirements.txt        # Python dependencies
-├── README.md               # Project documentation
-└── config.py               # Configuration for API and settings
+├── templates
+│   └── index.html                 # The main HTML file for the dashboard
+│
+├── app.py                         # The main Flask application that serves the web page and fetches weather data
+├── README.md                      # Project documentation
+├── requirements.txt               # List of Python dependencies (Flask, requests, etc.)
+└── .gitignore                     # Ignore file for Git
+
 ```
 
 ## Prerequisites
 
 Ensure that the following are installed on your system:
-- **Python 3.10+**
-- **Virtual Environment (venv)**
+- **Python 3.13**
 - **pip (Python Package Installer)**
 
 You will also need to sign up for an **API Key** from [OpenWeatherMap](https://openweathermap.org/).
@@ -57,28 +50,21 @@ You will also need to sign up for an **API Key** from [OpenWeatherMap](https://o
 git clone https://github.com/vamsinayak826742/weather_monitoring.git
 cd weather_monitoring
 ```
-
-### 2. Set Up Virtual Environment
-```bash
-python -m venv venv
+### 2. Create a Project Directory
+Open a terminal or command prompt and create a new directory for your project:
+bash
+```
+mkdir weather-dashboard
+cd weather-dashboard
 ```
 
-### 3. Activate the Virtual Environment
-- On Windows:
-  ```bash
-  venv\Scripts\activate
-  ```
-- On macOS/Linux:
-  ```bash
-  source venv/bin/activate
-  ```
-
-### 4. Install Dependencies
+### 3. Install Dependencies
+Here, requirements.txt file sqlite3 is commented if you want to install sqlite3 you can uncomment it and use.
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Set Up the API Key
+### 4. Set Up the API Key
 Obtain an API key from OpenWeatherMap and add it to your `config.py` file (see [Configuration](#configuration)).
 my API key=3ea793a78717a7c3f0cea5a418c18697 
 
@@ -86,16 +72,11 @@ my API key=3ea793a78717a7c3f0cea5a418c18697
 
 Run the main script to start fetching weather data and processing it in real time:
 ```bash
-python main.py
+python app.py
 ```
 
-### Running the Dashboard (Optional)
-To visualize the daily summaries and alerts, run the dashboard:
-```bash
-python visualization.py
-```
 
-You can access the dashboard at `http://localhost:8050`.
+You can access the dashboard at `http://127.0.0.1:5000/`.
 
 ## Configuration
 
@@ -132,14 +113,7 @@ You can configure temperature or weather condition thresholds in `config.py`. Al
 
 Sign up at [OpenWeatherMap](https://openweathermap.org/) to get your free API key. Replace the placeholder `API_KEY` in `config.py` with your actual key.
 
-## Testing
 
-### Unit Tests
-You can simulate API calls and test the system's behavior under different scenarios using the provided test cases in `tests/`.
-To run the tests:
-```bash
-pytest tests/
-```
 ### Manual Testing
 1. **Simulate weather updates** by running the main script for a few minutes.
 2. **Verify temperature conversions** and check if the logs display accurate values.
